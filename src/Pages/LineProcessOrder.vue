@@ -2591,7 +2591,7 @@ const headersProduction = [
   {
     title: "Material Description",
     align: "start",
-    value: "materialDescriptionTh",
+    value: "materialDescriptionEn",
   },
   { title: "Hg", align: "start", value: "displayHg1_3" },
   { title: "HgLv5", align: "start", value: "hgLv5" },
@@ -2605,7 +2605,7 @@ const headersMaterial = [
   {
     title: "Material Description",
     align: "start",
-    value: "materialDescriptionTh",
+    value: "materialDescriptionEn",
   },
   { title: "Hg", align: "start", value: "displayHg1_3" },
   { title: "HgLv5", align: "start", value: "hgLv5" },
