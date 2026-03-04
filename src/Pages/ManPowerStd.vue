@@ -82,7 +82,7 @@
 
       <template v-slot:item.actions="{ item }">
         <v-tooltip
-          text="แก้ไขและดูรายละเอียด"
+          text="Edit & View Details"
           location="bottom"
           color="primary"
           text-color="white"

@@ -66,7 +66,7 @@
         :items-per-page-options="[10, 30, 100, 200]"
       >
         <template v-slot:item.actions="{ item }">
-          <v-tooltip text="ลบรายการ" location="bottom" color="red" text-color="white">
+          <v-tooltip text="Delete Item" location="bottom" color="red" text-color="white">
             <template v-slot:activator="{ props }">
               <v-btn icon variant="text" v-bind="props" @click="deleteItem(item)">
                 <v-icon color="red">mdi-delete-outline</v-icon>

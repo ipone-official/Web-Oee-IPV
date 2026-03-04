@@ -694,9 +694,9 @@
             <v-tabs
               v-model="tab"
               background-color="transparent"
-              show-arrows
               class="custom-tabs mt-4"
               grow
+              fluid
             >
               <v-tab value="Detail">
                 <v-icon start>mdi-file-document-outline</v-icon>
@@ -713,7 +713,7 @@
               </v-tab>
             </v-tabs>
 
-            <v-window v-model="tab">
+            <v-window v-model="tab" >
               <v-window-item value="Detail">
                 <v-row class="mt-2" dense>
                   <v-col cols="12" sm="6" md="3">
@@ -1135,9 +1135,9 @@
                   </v-col>
                 </v-row>
               </v-window-item>
-              <v-window-item value="Reason">
+              <v-window-item value="Reason" >
                 <v-row class="mt-2" dense v-if="canEditUI">
-                  <v-col cols="12" sm="3" md="3">
+                  <v-col cols="12" sm="3" md="3" >
                     <v-autocomplete
                       v-model="mReason"
                       :items="iReasonDamage"
@@ -1157,7 +1157,7 @@
                       </template></v-autocomplete
                     >
                   </v-col>
-                  <v-col cols="12" sm="4" md="4">
+                  <v-col cols="12" sm="4" md="4" class="mt-2">
                     <v-autocomplete
                       v-model="mReasonDesc"
                       :items="iReasonDamageDesc"
@@ -1177,7 +1177,7 @@
                       </template></v-autocomplete
                     >
                   </v-col>
-                  <v-col cols="12" sm="3" md="3" class="filter-col">
+                  <v-col cols="8" sm="3" md="3" class="mt-2">
                     <v-text-field
                       v-model="mQtyReasonDisplay"
                       prepend-inner-icon="mdi-speedometer"
@@ -1205,7 +1205,7 @@
                           small
                           color="#007fc4"
                           dark
-                          class="ma-1 small-export-button"
+                          class="ma-1 small-export-button mt-2"
                           v-bind="attrs"
                           v-on="on"
                           @click="AddReasonItem()"
@@ -1432,7 +1432,7 @@
                   </v-col>
                 </v-row>
                 <v-row class="mt-2" dense justify="end" v-if="canEditUI">
-                  <v-col cols="12" sm="3" md="2" class="filter-col">
+                  <v-col cols="12" sm="3" md="2" class="mt-2">
                     <v-text-field
                       v-model="mDowntimeDisplay"
                       prepend-inner-icon="mdi-timer-outline"

@@ -68,7 +68,7 @@
 
       <template v-slot:item.actions="{ item }">
         <v-tooltip
-          text="แก้ไขและดูรายละเอียด"
+          text="Edit & View Details"
           location="bottom"
           color="primary"
           text-color="white"
@@ -79,7 +79,7 @@
             </v-btn>
           </template>
         </v-tooltip>
-        <v-tooltip text="ลบรายการ" location="bottom" color="red" text-color="white">
+        <v-tooltip text="Delete Item" location="bottom" color="red" text-color="white">
           <template v-if="item.isDeletable == 'Y'" v-slot:activator="{ props }">
             <v-btn icon variant="text" v-bind="props" @click="deleteItem(item)">
               <v-icon color="red">mdi-delete-outline</v-icon>
@@ -401,7 +401,7 @@ const deleteItem = async (item) => {
         Swal.fire({
           icon: "error",
           title: "เกิดข้อผิดพลาด!",
-          text: "ลบรายการไม่สำเร็จ กรุณาลองใหม่",
+          text: "Delete Itemไม่สำเร็จ กรุณาลองใหม่",
           confirmButtonColor: "#007fc4",
           didOpen: () => {
             document.querySelector(".swal2-confirm").style.color = "white";

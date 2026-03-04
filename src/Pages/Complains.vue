@@ -79,9 +79,9 @@
           {{ item.materialCode }}
         </div>
       </template>
-      <template v-slot:item.materialDescriptionTH="{ item }">
+      <template v-slot:item.materialDescriptionEN="{ item }">
         <div class="flex items-center gap-2 justify-start text-start">
-          {{ item.materialDescriptionTH }}
+          {{ item.materialDescriptionEN }}
         </div>
       </template>
       <template v-slot:item.displayStatus="{ item }">
@@ -91,7 +91,7 @@
       </template>
       <template v-slot:item.actions="{ item }">
         <v-tooltip
-          text="แก้ไขและดูรายละเอียด"
+          text="Edit & View Details"
           location="bottom"
           color="primary"
           text-color="white"
@@ -102,7 +102,7 @@
             </v-btn>
           </template>
         </v-tooltip>
-        <v-tooltip text="ลบรายการ" location="bottom" color="red" text-color="white">
+        <v-tooltip text="Delete Item" location="bottom" color="red" text-color="white">
           <template v-slot:activator="{ props }">
             <v-btn icon variant="text" v-bind="props" @click="deleteItem(item)">
               <v-icon color="red">mdi-delete-outline</v-icon>
@@ -275,7 +275,7 @@ const headers = [
   { title: "Line Process ID", align: "start", key: "lineProcessID" },
   { title: "Line Process Name", align: "start", key: "lineProcessName" },
   { title: "Material Code", align: "start", key: "materialCode" },
-  { title: "Material Desc.", align: "start", key: "materialDescriptionTH" },
+  { title: "Material Desc.", align: "start", key: "materialDescriptionEN" },
   { title: "Status", align: "start", key: "displayStatus" },
   { title: "Actions", align: "center", key: "actions" },
 ];
@@ -345,7 +345,7 @@ const editItem = (item) => {
   ];
   mMaterial.value = {
     materialCode: item.materialCode,
-    display: `${item.materialCode} : ${item.materialDescriptionTH}`,
+    display: `${item.materialCode} : ${item.materialDescriptionEN}`,
   };
   mActiveStatus.value = {
     key: item.isActive,
@@ -430,7 +430,7 @@ const submitForm = async () => {
 };
 const deleteItem = async (item) => {
   Swal.fire({
-    html: `Would you like to delete item  <br/> Line Process Name :<strong>  ${item.lineProcessName}</strong> <br/> Material (TH) :<strong>  ${item.materialDescriptionTH}</strong> ?`,
+    html: `Would you like to delete item  <br/> Line Process Name :<strong>  ${item.lineProcessName}</strong> <br/> Material (TH) :<strong>  ${item.materialDescriptionEN}</strong> ?`,
     icon: "warning",
     showCancelButton: true,
     allowOutsideClick: false,
@@ -466,7 +466,7 @@ const deleteItem = async (item) => {
         Swal.fire({
           icon: "error",
           title: "เกิดข้อผิดพลาด!",
-          text: "ลบรายการไม่สำเร็จ กรุณาลองใหม่",
+          text: "Delete Itemไม่สำเร็จ กรุณาลองใหม่",
           confirmButtonColor: "#007fc4",
           didOpen: () => {
             document.querySelector(".swal2-confirm").style.color = "white";
@@ -540,7 +540,7 @@ const fetchMasterMaterial = async () => {
     const response = await gMaterialBySpeed();
     iMaterial.value = response.results.map((item) => ({
       ...item,
-      display: `${item.materialCode} (${item.materialDescriptionTH})`,
+      display: `${item.materialCode} (${item.materialDescriptionEN})`,
     }));
   } catch (error) {
     console.error("เกิดข้อผิดพลาดในการโหลดข้อมูล:", error);
