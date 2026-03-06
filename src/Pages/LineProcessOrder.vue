@@ -531,7 +531,6 @@
                   :minOffset="-90"
                   :maxOffset="0"
                   :require="' * '"
-                  :disabled="true"
                 />
               </v-col>
               <v-col cols="12" sm="4" md="3">
